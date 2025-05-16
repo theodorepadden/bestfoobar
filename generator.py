@@ -1,44 +1,42 @@
 def checkFoo(num):
     if num % 5 == 0 and num != 0:
-        return True
+        return "Foo"
     else:
-        return False
+        return ""
 
 def checkBar(num):
     if num % 7 == 0 and num != 0:
-        return True
+        return "Bar"
     else:
-        return False
+        return ""
 
 
 def writeToMain(line):
     with open("main.py", "a") as f:
-        f.write(line)
+        f.write(line + "\n")
 
 #clears to make sure file is empty
 with open("main.py", "w") as f:
     f.write("")
 
+#todo add way to pass arg for amount of ints generated
+largestNum = 100
+writeToMain("i = 0")
+writeToMain("while i < 100:")
 
+currentNum = 0
+while currentNum <= largestNum:
+    line = "        print(\"" 
+    writeToMain("   if i == " + str(currentNum) + ":")
+    if checkFoo(currentNum) != "" or checkBar(currentNum) != "":
+        line += checkFoo(currentNum)
+        line += checkBar(currentNum)
+    else:
+        line += str(currentNum)
+    writeToMain(line + "\")")
+    currentNum += 1
 
-"""
-top = int(input("Enter the number you want to go up to: "))
-i = 0
-while i <= top:
-    returnString = ""
-    temp = False
-    if checkFoo(i):
-        returnString += "Foo"
-        temp = True
-    if checkBar(i):
-        returnString += "Bar"
-        temp = True
-    if temp is False:
-        returnString += str(i)
-    print(returnString)
-    i += 1
-"""
-
+writeToMain("   i += 1")
 
 
 
