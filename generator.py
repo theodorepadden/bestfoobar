@@ -18,11 +18,12 @@ def writeToMain(line):
 
 def setLargestNum(bigBoy = 1000):
     try:
-        int(bigBoy)
-        return bigBoy
-    execpt:
+        bigBoy = int(bigBoy)
+    except:
         print("Input a integer (ex 1, 2, 3) Running with default (1000)")
         return 1000
+
+    return bigBoy
 
 
 #clears to make sure file is empty
