@@ -33,7 +33,7 @@ with open("main.py", "w") as f:
 #todo add way to pass arg for amount of ints generated
 largestNum = setLargestNum(input("Enter the larget num here: "))
 writeToMain("i = 0")
-writeToMain("while i < " + str(largestNum) + ":")
+writeToMain("while i <= " + str(largestNum) + ":")
 
 currentNum = 0
 while currentNum <= largestNum:
