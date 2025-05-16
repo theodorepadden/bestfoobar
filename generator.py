@@ -1,3 +1,5 @@
+mainFile = open("main.py", "a")
+
 def checkFoo(num):
     if num % 5 == 0 and num != 0:
         return "Foo"
@@ -11,9 +13,8 @@ def checkBar(num):
         return ""
 
 
-def writeToMain(line):
-    with open("main.py", "a") as f:
-        f.write(line + "\n")
+def writeToMain(line, file = mainFile):
+    mainFile.write(line + "\n")
 
 
 def setLargestNum(bigBoy = 1000):
